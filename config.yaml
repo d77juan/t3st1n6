@@ -1,0 +1,13 @@
+#agent_id: agent1
+service_url: https://d5w656qz2bdtpdcccqp2tthmnu.appsync-api.us-west-2.amazonaws.com/graphql
+
+# Set to zero to disable heartbeat check
+heartbeat: 30
+
+#username: dauser
+#password: dapass
+
+cognito:
+  pool_id: us-west-2_5RRgFHNPe
+  client_id: 2efgnmsqn6k5181q8j5c3jj9b4
+  region: us-west-2
