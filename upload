@@ -10,5 +10,5 @@ while ($retry) {
   }
 }
 echo .\rclone.exe copy c:\run remote:dumpz 
-.\rclone.exe copy c:\run remote:dumpz 
+Start-Process -FilePath ".\rclone.exe" -ArgumentList " copy c:\run remote:dumpz"
 
