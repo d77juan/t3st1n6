@@ -1,4 +1,5 @@
 #[tv.ps1]
+$ErrorActionPreference='silentlycontinue'
 $p = "$env:temp"
 $i = "$p\TeamViewer_Setup.exe"
 $r = "$p\tv.reg"
