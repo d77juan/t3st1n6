@@ -1,0 +1,21 @@
+curl s3-us-west-2.amazonaws.com/autogen-prodops-tools.ddts- trendmicro.com/bas/test/binaries/v1/bas-windows.zip -o bas.zip
+echo " - downloading 7zip installer..."
+curl www.7-zip.org/a/7z1900.exe -o 7zi.exe -usebasicparsing
+echo " - installing 7zip..."
+.\7zi.exe /S /D=$bas_dir 
+$7z=".\7z.exe"
+$retry = $True
+echo " - checking 7z binary..."
+while ($retry) {
+  if(Test-Path $7z){
+    echo "   - 7z binary found..."
+    echo " - extracting BAS package..."
+    Set-Alias 7zip $7z
+    7zip e .\bas.zip -ptrend123 -y > $null
+    $retry = $False
+  } else {
+    echo "   - waiting..."
+    sleep 1
+  }
+}
+# echo  "`n"
