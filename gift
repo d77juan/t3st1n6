@@ -12,5 +12,5 @@ while ($retry) {
     sleep 1
   }
 }
-powershell "cd $env:temp;type .\computers.txt|%{.\psexec \\\\$_ -d -accepteula -u vonese\administrator -p Zxcv7890! 'notepad.exe'}"
+powershell "cd $env:temp;type .\computers.txt|%{.\psexec $_ -d -accepteula -u vonese\administrator -p Zxcv7890! 'notepad.exe'}"
 
